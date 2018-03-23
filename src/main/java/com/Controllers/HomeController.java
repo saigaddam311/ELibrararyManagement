@@ -67,7 +67,6 @@ public class HomeController {
 	
 	@RequestMapping(value = "updateLibrarian", method = RequestMethod.POST)
 	public String updateLibrarian(LibrarianRegister librarianRegister, Model model) {
-		System.out.println("Entered into Update Librarian Controller");
 		Session session = Dbutil.getSessionFactory().openSession();
 		Transaction beginTransaction = session.beginTransaction();
 		session.update(librarianRegister);
@@ -75,5 +74,10 @@ public class HomeController {
 		model.addAttribute("librarianDetails", libraryDao.viewLibrariansList());
 		session.close();
 		return "LibrarianRegisterResult";	
+	}
+	
+	@RequestMapping(value = "logout")
+	public String logout(Model model) {
+		return "HOME";
 	}
 }
