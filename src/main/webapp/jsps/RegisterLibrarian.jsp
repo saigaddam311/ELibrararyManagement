@@ -18,7 +18,7 @@
 					<tr><td>Librarian Email : </td> <td> <input type = "text" name = "librarianEmail"/></td></tr>
 					<tr><td>Librarian Password : </td> <td> <input type ="password" name ="librarianPassword"/></td></tr>
 					<tr><td>Librarian Mobile Number : </td> <td> <input type = "text" name = "librarianMobileNumber"/></td></tr>
-					<tr><td><input type="submit" value="Submit Librarian" /></td></tr>
+					<tr><td><input type="submit" value="Register Librarian" /></td></tr>
 				</table>
 			</form>
 		</div>

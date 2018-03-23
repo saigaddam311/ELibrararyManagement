@@ -9,7 +9,7 @@
 		</title>
 	</head>
 	<body>
-		Librarian Successfully Registerd!!!
+		<font color = "green"><h1>Librarian Successfully Registerd Or Updated!!!</h1></font>
 		<a href="${pageContext.request.contextPath}/jsps/AdminHome.jsp">Admin Home Page</a>
 	</body>
 </html>
