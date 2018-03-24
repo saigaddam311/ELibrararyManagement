@@ -21,9 +21,10 @@ function librarianForgotPasswordButton() {
 <form action="">
 <font color = "blue"><h1>Library Management</h1></font>
 <font color = "blue"><h3>Librarian Login Page</h3></font>
+<font color = "red">${message}</font>
 <table>
-<tr><td>UserName : </td> <td> <input type="text" name = "username" /></td></tr>
-<tr><td>Password : </td> <td> <input type="text" name = "password" /></td></tr>
+<tr><td>UserName : </td> <td> <input type="text" name = "librarianEmail" /></td></tr>
+<tr><td>Password : </td> <td> <input type="text" name = "librarianPassword" /></td></tr>
 <tr><td><input type = "button" onclick="librarianLoginButton()" value = "Login"/></td>
 <td><input type = "button" onclick="librarianForgotPasswordButton()" value = "Forgot Password"/></td></tr>
 </table>

@@ -37,5 +37,17 @@ public class LibraryDao {
 		session.close();
 		return list;
 	}
+	
+	public List<LibrarianRegister> librarianLoginLogic(LibrarianRegister register) {
+
+		Session openSession = DbUtil.getSessionFactory().openSession();
+		Query createQuery = openSession.createQuery("from LibrarianRegister where librarianEmail = :uname and librarianPassword = :pwd");
+		createQuery.setParameter("uname", register.getLibrarianEmail());
+		createQuery.setParameter("pwd", register.getLibrarianPassword());
+		List<LibrarianRegister> list = createQuery.list();
+		openSession.close();
+		return list;
+
+	}
 
 }

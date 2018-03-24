@@ -2,6 +2,7 @@ package com.Controllers;
 
 import java.util.List;
 
+import org.dom4j.rule.Mode;
 import org.hibernate.Query;
 import org.hibernate.Transaction;
 import org.hibernate.classic.Session;
@@ -39,7 +40,7 @@ public class HomeController {
 	/*-----ADMIN Button controller-------*/
 	@RequestMapping(value = "adminLoginButton")
 	public String adminLoginButton(AdminRegister register,Model model) {
-		if (register.getUsername().isEmpty() || register.getPassword().isEmpty()) {
+		if (register.getEmailid().isEmpty() || register.getPassword().isEmpty()) {
 
 			model.addAttribute("message", "Username and password must be given!!!");
 			return "adminLogin";
@@ -73,9 +74,26 @@ public class HomeController {
 	/*-----Librarian Button controller-------*/
 
 	@RequestMapping(value = "librarianLoginButton")
-	public String librarianLoginButton() {
-		return "";
+	public String librarianLoginButton(LibrarianRegister register,Model model) {
+		if (register.getLibrarianEmail().isEmpty() || register.getLibrarianPassword().isEmpty()) {
+
+			model.addAttribute("message", "Username and password must be given!!!");
+			return "librarianLogin";
+		} else {
+
+			List<LibrarianRegister> list = dao.librarianLoginLogic(register);
+		if (list != null & list.size() >= 1) {
+
+			LibrarianRegister reg = list.get(0);
+						
+		} else {
+			model.addAttribute("message", "Username and password entered not corectly!!!");
+			return "librarianLogin";
+		}
+		}
+		return "RegisterResult";
 	}
+
 
 	@RequestMapping(value = "librarianForgotPasswordButton")
 	public String librarianForgotPasswordButton() {
@@ -93,6 +111,23 @@ public class HomeController {
 
 	/*------------------------------*/
 
+	@RequestMapping(value = "forgotPassword")
+	public String forgotPassword(@RequestParam("emailid")String emailid,@RequestParam("newpassword")String newpwd,Model model) {
+		Session s = DbUtil.getSessionFactory().openSession();
+		Query updateQuery = s.createQuery("update User set password = :pwd where emailid = :emailid");
+		updateQuery.setParameter("pwd", newpwd);
+		updateQuery.setParameter("emailid", emailid);
+		int executeUpdate = updateQuery.executeUpdate();
+		s.beginTransaction().commit();
+		
+		model.addAttribute("message", "Updated Successfully!!!");
+		return "ForgotPassword";
+	}
+	
+	@RequestMapping(value = "forgotLoginButton")
+	public String loginButton() {
+		return "Login";
+	}
 
 
 	

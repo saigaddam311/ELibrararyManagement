@@ -12,7 +12,7 @@
 		<div align = "center">
 			<form action="${pageContext.request.contextPath}/registerLibrarian" method="post">
 				<font color = "blue"><h1>Library Management</h1></font>
-				<font color = "green"><h1>Librarian Registration Page</h1></font>
+				<font color = "blue"><h1>Librarian Registration Page</h1></font>
 				<table>
 					<tr><td>Librarian Name : </td> <td> <input type = "text" name = "librarianName"/></td></tr>
 					<tr><td>Librarian Email : </td> <td> <input type = "text" name = "librarianEmail"/></td></tr>
