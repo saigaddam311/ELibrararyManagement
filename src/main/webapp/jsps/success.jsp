@@ -6,13 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
+${message} Details
 <body>
-<table>
-<form action="${pageContext.request.contextPath}/issuebook">
-<tr><td>StudentID:</td><td><input type="text" name="stdid"/></td></tr></br>
-<tr><td>BookNo:</td><td><input type="text" name="bookno"/></td></tr></br>
-<tr><td><input type="submit" value="IssueBook"/> <a href="librarian.jsp">Back</a> </td></tr></br>
-</form>
-</table>
 </body>
 </html>

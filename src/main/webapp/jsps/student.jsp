@@ -7,12 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
-<form action="${pageContext.request.contextPath}/issuebook">
-<tr><td>StudentID:</td><td><input type="text" name="stdid"/></td></tr></br>
-<tr><td>BookNo:</td><td><input type="text" name="bookno"/></td></tr></br>
-<tr><td><input type="submit" value="IssueBook"/> <a href="librarian.jsp">Back</a> </td></tr></br>
+<form action="${pageContext.request.contextPath}/register">
+RollNo:<input type="text" name="rollno"></br>
+StudentName<input type="text" name="stdname"></br>
+StudentMobile<input type="text" name="stdmobile"></br>
+<input type="submit" value="register">
 </form>
-</table>
 </body>
 </html>

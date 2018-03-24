@@ -14,7 +14,7 @@ ${message}
 <tr><td>Name:</td><td><input type="text" name="name"/></td></tr></br>
 <tr><td>Author:</td><td><input type="text" name="author"/></td></tr></br>
 <tr><td>Publisher:</td><td><input type="text" name="publisher"/></td></tr></br>
-<tr><td><input type="submit" value="SaveBook"/> <a href="librarian.jsp">Back</a> </td></tr></br>
+<tr><td><input type="submit" value="SaveBook"/> <a href="${pageContext.request.contextPath}/librarian.jsp">Back</a> </td></tr></br>
 </form>
 </table>
 </body>

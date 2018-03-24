@@ -15,6 +15,7 @@
 		<!-- <property name="hbm2ddl.auto">update</property> -->
 		
 		<mapping class = "com.Pojos.Addbook"/>
+		<mapping class = "com.Pojos.Students"/>
 		
   </session-factory>
   </hibernate-configuration>     
