@@ -4,20 +4,14 @@
     "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-	<seesion-factory>
+	<session-factory>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/librarymanagement</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">saikumar</property>
 		<property name="show_sql">true</property>
-
-		<mapping class = "com.Pojos.AdminRegister"/>
-
-		<property name="hbm2ddl.auto">update</property>
-
-		
+		<mapping class="com.Pojos.AdminRegister" />
 		<mapping class="com.Pojos.LibrarianRegister" />
-		</seesion-factory>
-	
+	</session-factory>
 </hibernate-configuration>     

@@ -5,7 +5,6 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.classic.Session;
 
-import com.Dbutil.Dbutil;
 import com.Pojos.AdminRegister;
 import com.Pojos.LibrarianRegister;
 
@@ -32,7 +31,7 @@ public class LibraryDao {
 	}
 
 	public List<LibrarianRegister> viewLibrariansList() {
-		Session session = Dbutil.getSessionFactory().openSession();
+		Session session = DbUtil.getSessionFactory().openSession();
 		Query query = session.createQuery("from LibrarianRegister");
 		List<LibrarianRegister> list = query.list();
 		session.close();

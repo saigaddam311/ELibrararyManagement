@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.Daos.DbUtil;
 import com.Daos.LibraryDao;
-import com.Dbutil.Dbutil;
 import com.Pojos.AdminRegister;
 import com.Pojos.LibrarianRegister;
 
@@ -55,7 +55,7 @@ public class HomeController {
 			return "adminLogin";
 		}
 		}
-		return "RegisterResult";
+		return "AdminHome";
 	}
 
 	@RequestMapping(value = "adminNewRegistrationButton")
@@ -104,7 +104,7 @@ public class HomeController {
 
 	@RequestMapping(value="registerLibrarian", method = RequestMethod.POST)
 	public String registerLibrarian(LibrarianRegister librarianRegister) {
-		Session openSession = Dbutil.getSessionFactory().openSession();
+		Session openSession = DbUtil.getSessionFactory().openSession();
 		openSession.save(librarianRegister);
 		openSession.beginTransaction().commit();
 		openSession.close();
@@ -119,7 +119,7 @@ public class HomeController {
 	
 	@RequestMapping(value="deleteLibrarian", method = RequestMethod.POST)
 	public String deleteLibrarian(@RequestParam("librarianId") int id, Model model) {
-		Session session = Dbutil.getSessionFactory().openSession();
+		Session session = DbUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		Query deleteQuery = session.createQuery("delete from LibrarianRegister where librarianId=:id");
 		deleteQuery.setParameter("id", id);
@@ -131,7 +131,7 @@ public class HomeController {
 	
 	@RequestMapping(value="editLibrarian", method = RequestMethod.POST)
 	public String editLibrarian(@RequestParam("librarianId") int id, Model model) {
-		Session session = Dbutil.getSessionFactory().openSession();
+		Session session = DbUtil.getSessionFactory().openSession();
 		Query editQuery = session.createQuery("from LibrarianRegister where librarianId=?");
 		editQuery.setParameter(0, id);
 		List<LibrarianRegister> list = editQuery.list();
@@ -142,7 +142,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "updateLibrarian", method = RequestMethod.POST)
 	public String updateLibrarian(LibrarianRegister librarianRegister, Model model) {
-		Session session = Dbutil.getSessionFactory().openSession();
+		Session session = DbUtil.getSessionFactory().openSession();
 		Transaction beginTransaction = session.beginTransaction();
 		session.update(librarianRegister);
 		beginTransaction.commit();
