@@ -16,6 +16,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+
 		<dependency>
 			<groupId>javax.transaction</groupId>
 			<artifactId>jta</artifactId>
@@ -58,6 +59,11 @@
 			<artifactId>hibernate-commons-annotations</artifactId>
 			<version>3.0.0.ga</version>
 		</dependency>
+
+	
+		<!-- Hibernate library dependecy start -->
+	
+	
 		<dependency>
 			<groupId>dom4j</groupId>
 			<artifactId>dom4j</artifactId>
