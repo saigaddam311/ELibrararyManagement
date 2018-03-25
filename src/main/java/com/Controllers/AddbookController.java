@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.Pojos.Addbook;
+import com.Pojos.Students;
 
 @Controller
 public class AddbookController {
@@ -44,5 +45,20 @@ public class AddbookController {
 		}
 		model.addAttribute("message", list);
 		return "booklist";
+	}
+	
+	
+	@RequestMapping(value="insertboth",method=RequestMethod.GET)
+	public String insertboth(Addbook addbook,Students students,Model model) {
+		Configuration configure = new AnnotationConfiguration().configure();
+		SessionFactory sf = configure.buildSessionFactory();
+		Session session = sf.openSession();
+		
+		addbook=(Addbook)session.get(Addbook.class, addbook.getBookno());
+		
+		//customer=(Customer)session.get(Customer.class, customer.getCustomermail());
+		//product.getCustomers().add(customer);
+		
+		return "";
 	}
 }
