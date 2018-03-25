@@ -56,8 +56,7 @@ public class AddbookController {
 		
 		addbook=(Addbook)session.get(Addbook.class, addbook.getBookno());
 		
-		//customer=(Customer)session.get(Customer.class, customer.getCustomermail());
-		//product.getCustomers().add(customer);
+		
 		
 		return "";
 	}
