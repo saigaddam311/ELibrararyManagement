@@ -27,7 +27,8 @@
 		</script>
 	</head>
 	<body>
-		<h3>Welcome to Librarian Details Page!....</h3>
+		<font color="blue"><h1> Library Management </h1></font>
+				<font color="blue"><h3> View Librarians  </h3></font>
 		<form action="">
 			<table>
 				<tr>

@@ -25,7 +25,8 @@
 	<body>
 		<div align="center">
 			<form action="">
-				<font color="red"><h1> Admin Library Management Section </h1></font>
+			<font color="blue"><h1> Library Management </h1></font>
+				<font color="blue"><h3> Admin Section </h3></font>
 				<h4>
 					<input type="submit" onclick="addLibrarian()" value="Add Librarian" />
 				</h4>

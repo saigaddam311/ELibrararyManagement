@@ -11,6 +11,7 @@
 	<body>
 	<div align = "center">
 			<form action="${pageContext.request.contextPath}/updateLibrarian" method="post">
+			<font color = "blue"><h1>Library Management</h1></font>
 				<font color = "blue"><h3>Welcome to Update Librarian page!!...Please Update Librarian details</h3></font>
 				<font color = "green"><h1>Update Librarian Name is ::: ${LibrarianDetails.librarianName}</h1></font>
 				<table>
