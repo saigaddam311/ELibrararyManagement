@@ -91,7 +91,7 @@ public class HomeController {
 			return "librarianLogin";
 		}
 		}
-		return "RegisterResult";
+		return "librarian";
 	}
 
 
