@@ -25,7 +25,7 @@ function adminForgotPasswordButton() {
 <div align = "center">
 <form action="adminLoginButton">
 <font color = "blue"><h1>Library Management</h1></font>
-<font color = "blue"><h3>Librarian Login Page</h3></font>
+<font color = "blue"><h3>Admin Login Page</h3></font>
 <font color = "red">${message}</font>
 <table>
 <tr><td>UserName : </td> <td> <input type="text" name = "username" /></td></tr>

@@ -40,7 +40,7 @@ public class HomeController {
 	/*-----ADMIN Button controller-------*/
 	@RequestMapping(value = "adminLoginButton")
 	public String adminLoginButton(AdminRegister register,Model model) {
-		if (register.getEmailid().isEmpty() || register.getPassword().isEmpty()) {
+		if (register.getUsername().isEmpty() || register.getPassword().isEmpty()) {
 
 			model.addAttribute("message", "Username and password must be given!!!");
 			return "adminLogin";
@@ -66,7 +66,7 @@ public class HomeController {
 
 	@RequestMapping(value = "adminForgotPasswordButton")
 	public String adminForgotPasswordButton() {
-		return "";
+		return "ForgotPassword";
 	}
 
 	/*------------------------------*/
@@ -110,11 +110,12 @@ public class HomeController {
 	}
 
 	/*------------------------------*/
+	/*------------admin forgot password logic------------------*/
 
 	@RequestMapping(value = "forgotPassword")
 	public String forgotPassword(@RequestParam("emailid")String emailid,@RequestParam("newpassword")String newpwd,Model model) {
 		Session s = DbUtil.getSessionFactory().openSession();
-		Query updateQuery = s.createQuery("update User set password = :pwd where emailid = :emailid");
+		Query updateQuery = s.createQuery("update AdminRegister set password = :pwd where emailid = :emailid");
 		updateQuery.setParameter("pwd", newpwd);
 		updateQuery.setParameter("emailid", emailid);
 		int executeUpdate = updateQuery.executeUpdate();
@@ -126,11 +127,11 @@ public class HomeController {
 	
 	@RequestMapping(value = "forgotLoginButton")
 	public String loginButton() {
-		return "Login";
+		return "adminLogin";
 	}
 
 
-	
+	/*------------------------------*/
 
 	@RequestMapping(value = "addLibrarian")
 	public String addLibrarian() {
