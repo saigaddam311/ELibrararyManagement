@@ -24,3 +24,26 @@ CREATE TABLE  `librarymanagement`.`students` (
   `stdmobile` varchar(45) NOT NULL DEFAULT '0',
   PRIMARY KEY (`stuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `librarymanagement`.`adminregister`;
+CREATE TABLE  `librarymanagement`.`adminregister` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(45) NOT NULL DEFAULT '',
+  `username` varchar(45) NOT NULL DEFAULT '',
+  `password` varchar(45) NOT NULL DEFAULT '',
+  `emailid` varchar(45) NOT NULL DEFAULT '',
+  `mobileno` varchar(45) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `librarymanagement`.`librarianregister`;
+CREATE TABLE  `librarymanagement`.`librarianregister` (
+  `librarianId` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `librarianName` varchar(45) NOT NULL DEFAULT '',
+  `librarianEmail` varchar(45) NOT NULL DEFAULT '',
+  `librarianPassword` varchar(45) NOT NULL DEFAULT '',
+  `librarianMobileNumber` varchar(45) NOT NULL DEFAULT '',
+  PRIMARY KEY (`librarianId`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;

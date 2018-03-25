@@ -28,13 +28,13 @@
 			<font color="blue"><h1> Library Management </h1></font>
 				<font color="blue"><h3> Admin Section </h3></font>
 				<h4>
-					<input type="submit" onclick="addLibrarian()" value="Add Librarian" />
+					<input type="button" onclick="addLibrarian()" value="Add Librarian" />
 				</h4>
 				<h4>
-					<input type="submit" onclick="viewLibrarian()" value="View Librarian" />
+					<input type="button" onclick="viewLibrarian()" value="View Librarian" />
 				</h4>
 				<h4>
-					<input type="submit" onclick="logout()" value="Logout" />
+					<input type="button" onclick="logout()" value="Logout" />
 				</h4>
 			</form>
 		</div>
