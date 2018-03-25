@@ -1,8 +1,8 @@
 package com.Controllers;
 
+
 import java.util.List;
 
-import org.dom4j.rule.Mode;
 import org.hibernate.Query;
 import org.hibernate.Transaction;
 import org.hibernate.classic.Session;
@@ -157,7 +157,7 @@ public class HomeController {
 	public String deleteLibrarian(@RequestParam("librarianId") int id, Model model) {
 		Session session = DbUtil.getSessionFactory().openSession();
 		session.beginTransaction();
-		Query deleteQuery = session.createQuery("delete from LibrarianRegister where librarianId=:id");
+		org.hibernate.Query deleteQuery = session.createQuery("delete from LibrarianRegister where librarianId=:id");
 		deleteQuery.setParameter("id", id);
 		deleteQuery.executeUpdate();
 		session.getTransaction().commit();
@@ -167,8 +167,10 @@ public class HomeController {
 	
 	@RequestMapping(value="editLibrarian", method = RequestMethod.POST)
 	public String editLibrarian(@RequestParam("librarianId") int id, Model model) {
+
 		Session session = DbUtil.getSessionFactory().openSession();
 		Query editQuery = session.createQuery("from LibrarianRegister where librarianId=?");
+
 		editQuery.setParameter(0, id);
 		List<LibrarianRegister> list = editQuery.list();
 		session.close();
