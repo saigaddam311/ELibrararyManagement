@@ -3,6 +3,7 @@ package com.Controllers;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Transaction;
 import org.hibernate.classic.Session;
@@ -22,6 +23,8 @@ import com.Pojos.LibrarianRegister;
 @Controller
 public class HomeController {
 
+	final static Logger logger = Logger.getLogger(HomeController.class);
+	
 	@Autowired
 	LibraryDao dao;
 
@@ -40,22 +43,27 @@ public class HomeController {
 	/*-----ADMIN Button controller-------*/
 	@RequestMapping(value = "adminLoginButton")
 	public String adminLoginButton(AdminRegister register,Model model) {
+		logger.info("Entered into adminLoginButton method");
 		if (register.getUsername().isEmpty() || register.getPassword().isEmpty()) {
-
+			logger.debug("Either User name or password is empty");
+			logger.debug("Username is : " + register.getUsername() + "--Password is : "+ register.getPassword());
 			model.addAttribute("message", "Username and password must be given!!!");
 			return "adminLogin";
 		} else {
-
+			logger.debug("Username and password is not null");
+			logger.debug("Username is : " + register.getUsername() + "--Password is : "+ register.getPassword());
 			List<AdminRegister> list = dao.loginLogic(register);
 		if (list != null & list.size() >= 1) {
-
+			logger.debug("User exist with provided credentials");
 			AdminRegister reg = list.get(0);
 						
 		} else {
+			logger.debug("Invalid credentials");
 			model.addAttribute("message", "Username and password entered not corectly!!!");
 			return "adminLogin";
 		}
 		}
+		logger.info("Exit of adminLoginButton method");
 		return "AdminHome";
 	}
 
